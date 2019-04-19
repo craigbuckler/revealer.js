@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>revealer.js demonstration</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/revealer.min.css">
+</head>
+<body>
+
+<main>
+
+  <article>
+
+    <h1 data-revealer="up">revealer.js demonstration</h1>
+
+    <p class="feature" data-revealer="zoomup"><code>revealer.js</code> reveals an element with a CSS animation when it is scrolled into view.</p>
+
+    <p><a href="https://codepen.io/craigbuckler/full/Lvmdjb">See example page on Codepen.io...</a></p>
+
+    <p>Please use the code as you wish - <a href="https://twitter.com/craigbuckler">tweet me @craigbuckler</a> if you find it useful. <a href="https://github.com/craigbuckler/reveal.js">Download from GitHub&hellip;</a></p>
+
+    <p>Benefits:</p>
+
+    <ul class="featurelist">
+      <li data-revealer="left">shows attention-grabbing animations</li>
+      <li data-revealer="right">fast loading, high performance, uses Intersection Observers</li>
+      <li data-revealer="left">fully customisable - any CSS reveal effect can be applied</li>
+      <li data-revealer="right">small: 825 bytes of JavaScript, 171 bytes of CSS (minimum)</li>
+      <li data-revealer="left">works in all modern browsers (not IE)</li>
+      <li data-revealer="right">safe progressive enhancement - will not break older browsers</li>
+      <li data-revealer="left">easy to use</li>
+    </ul>
+
+
+    <h2 data-revealer="right">Usage instructions</h2>
+
+    <p>Include the minified CSS and JavaScript anywhere in your page. Typically, the CSS is loaded in the HTML <code>&lt;head&gt;</code> and the JS is loaded just before the closing <code>&lt;/body&gt;</code> tag:</p>
+
+    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/progressive-image.min.css&quot;&gt;
+&lt;script src=&quot;js/progressive-image.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+    <p>Then add a <code>data-revealer="class"</code> attribute to any element you wish to animate into view, e.g.</p>
+
+    <pre><code>&lt;h1 data-revealer=&quot;up&quot;&gt;Main title&lt;/h1&gt;</code></pre>
+
+    <p>Five class animations are provided: <code>up</code>, <code>down</code>, <code>left</code>, <code>right</code>, and <code>zoomup</code>, but more can be added.</p>
+
+
+    <h2 data-revealer="right">Custom delays</h2>
+
+    <p>By default, a delay of at least 300 milliseconds occurs between each element animation. So, if three elements are scrolled into view at the same time, the first animates immediately, the second after 300ms, and the third after 600ms:</p>
+
+    <ul class="box">
+      <li data-revealer="left">element 1</li>
+      <li data-revealer="up">element 2</li>
+      <li data-revealer="right">element 3</li>
+    </ul>
+
+    <p>An optional <code>data-delay="M"</code> attribute on the same element sets a custom delay to <code>M</code> milliseconds. The following elements all have <code>data-delay="0"</code> set so they animate at the same time:</p>
+
+    <ul class="box">
+      <li data-revealer="left" data-delay="0">element 1</li>
+      <li data-revealer="up" data-delay="0">element 2</li>
+      <li data-revealer="right" data-delay="0">element 3</li>
+    </ul>
+
+
+    <h2 data-revealer="right">Custom animations</h2>
+
+    <p>An element is initially hidden by applying the <code>.revealer</code> class which sets <code>opacity: 0</code>.</p>
+
+    <p>When the element is scrolled into view, the class defined by the <code>data-revealer</code> attribute is applied, e.g. <code>data-revealer="up"</code> applies the <code>up</code> class which triggers an animation defined by the <code>.revealer.up</code> selector in the CSS.</p>
+
+    <p>Animations should generally set <code>animation-fill-mode: forwards</code> to ensure the animation ends at the state defined by the last (100%) keyframe. That last keyframe should also set the final <code>opacity</code>.</p>
+
+    <p>Example from <code>revealer.css</code>:</p>
+
+    <pre><code>.revealer.up { animation: revealup 0.6s ease forwards; }
+
+@keyframes revealup {
+  0% { opacity: 0.2; transform: translateY(100px); }
+  100% { opacity: 1; transform: translateY(0); }
+}</code></pre>
+
+    <p>The element is unobserved once it has been revealed so it remains in-place.</p>
+
+
+    <h2 data-revealer="right">Advanced configuration</h2>
+
+    <p><code>revealer.js</code> defines the following configuration variables in a <code>cfg</code> object which can be changed:</p>
+
+    <ul>
+      <li><code>cfg.name</code> - attribute data name (default <code>revealer</code>)</li>
+      <li><code>cfg.delay</code> - attribute data delay (default <code>delay</code>)</li>
+      <li><code>cfg.root</code> - root element (default <code>null</code> for viewport)</li>
+      <li><code>cfg.margin</code> - margin around root element (default <code>0px</code>)</li>
+      <li><code>cfg.threshold</code> - proportion of element visible before triggering animation (default <code>0.6</code> - element must be at least 60% in viewport)</li>
+      <li><code>cfg.minDelay</code> - minimum delay between each animation unless set with data-delay (default <code>300</code> milliseconds)</li>
+    </ul>
+
+
+    <h2 data-revealer="right">Further considerations</h2>
+
+    <p>Consider using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"><code>prefers-reduced-motion</code> media query</a> to disable animations according to user preference.</p>
+
+  </article>
+
+</main>
+
+<script src="js/revealer.min.js"></script>
+</body>
+</html>
