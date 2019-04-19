@@ -80,6 +80,8 @@ revealer.js defines the following configuration variables in a cfg object which 
 
 Consider using the [`prefers-reduced-motion` media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to disable animations according to user preference.
 
+Avoid using on very large elements where it may become impossible to show 60% of it on-screen so the revealing animation is never triggered.
+
 
 ## Version history
 
