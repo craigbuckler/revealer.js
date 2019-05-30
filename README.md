@@ -1,12 +1,10 @@
 # revealer.js
 
+[**demonstration**](https://codepen.io/craigbuckler/full/Lvmdjb) | [**GitHub**](https://github.com/craigbuckler/revealer.js) | [**npm**](https://www.npmjs.com/package/revealer.js) | [**donate**](https://gum.co/revealerjs) | [@craigbuckler](https://twitter.com/craigbuckler) | [craigbuckler.com](https://craigbuckler.com/)
+
 revealer.js reveals an element with a CSS animation when it is scrolled into view.
 
-[See example page on Codepen.io...](https://codepen.io/craigbuckler/full/Lvmdjb)
-
-Please use the code as you wish - [tweet me @craigbuckler](https://twitter.com/craigbuckler) if you find it useful.
-
-Benefits:
+Please use the code as you wish. [Tweet me @craigbuckler](https://twitter.com/craigbuckler) if you find it useful and [donate toward development](https://gum.co/revealerjs) if you use it commercially.
 
 * shows attention-grabbing animations
 * fast loading, high performance, uses Intersection Observers
@@ -22,9 +20,11 @@ Benefits:
 Include the minified CSS and JavaScript anywhere in your page. Typically, the CSS is loaded in the HTML `<head>` and the JS is loaded just before the closing `</body>` tag:
 
 ```html
-<link rel="stylesheet" href="css/progressive-image.min.css">
-<script src="js/progressive-image.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/revealer.js@1.0.0/dist/revealer.css">
+<script src="https://cdn.jsdelivr.net/npm/revealer.js@1.0.0/dist/revealer.js"></script>
 ```
+
+CDN URLs are shown above but you can also `npm i revealer.js` to install via npm and use a bundler.
 
 Then add a `data-revealer="class"` attribute to any element you wish to animate into view, e.g.
 
@@ -85,6 +85,11 @@ Avoid using on very large elements where it may become impossible to show 60% of
 
 ## Version history
 
-### v1.0, 19 April 2019
+### v1.0.0, 30 May 2019
+
+* Gulp.js minification
+* published on npm, CDN information
+
+### v1.0.0, 19 April 2019
 
 * Initial commit

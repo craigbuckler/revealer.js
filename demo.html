@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>revealer.js demonstration</title>
+<title>revealer.js</title>
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="css/demo.css">
-<link rel="stylesheet" href="css/revealer.min.css">
+<link rel="stylesheet" href="src/demo.css">
+<link rel="stylesheet" href="src/css/revealer.css">
 </head>
 <body>
 
@@ -13,13 +13,13 @@
 
   <article>
 
-    <h1 data-revealer="up">revealer.js demonstration</h1>
+    <h1 data-revealer="down">revealer.js</h1>
+
+    <p><a href="https://github.com/craigbuckler/revealer.js"><strong>GitHub</strong></a> | <a href="https://www.npmjs.com/package/revealer.js"><strong>npm</strong></a> | <a href="https://gum.co/revealerjs"><strong>donate</strong></a> | <a href="https://twitter.com/craigbuckler">@craigbuckler</a> | <a href="https://craigbuckler.com/">craigbuckler.com</a></p>
 
     <p class="feature" data-revealer="zoomup"><code>revealer.js</code> reveals an element with a CSS animation when it is scrolled into view.</p>
 
-    <p><a href="https://codepen.io/craigbuckler/full/Lvmdjb">See example page on Codepen.io...</a></p>
-
-    <p>Please use the code as you wish - <a href="https://twitter.com/craigbuckler">tweet me @craigbuckler</a> if you find it useful. <a href="https://github.com/craigbuckler/reveal.js">Download from GitHub&hellip;</a></p>
+    <p>Please use the code as you wish. <a href="https://twitter.com/craigbuckler">Tweet me @craigbuckler</a> if you find it useful and <a href="https://gum.co/revealerjs">donate toward development</a> if you use it commercially.</p>
 
     <p>Benefits:</p>
 
@@ -38,8 +38,10 @@
 
     <p>Include the minified CSS and JavaScript anywhere in your page. Typically, the CSS is loaded in the HTML <code>&lt;head&gt;</code> and the JS is loaded just before the closing <code>&lt;/body&gt;</code> tag:</p>
 
-    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/progressive-image.min.css&quot;&gt;
-&lt;script src=&quot;js/progressive-image.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/revealer.js@1.0.0/dist/revealer.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/revealer.js@1.0.0/dist/revealer.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+    <p>CDN URLs are shown above but you can also <code>npm i revealer.js</code> to install via npm and use a bundler.</p>
 
     <p>Then add a <code>data-revealer="class"</code> attribute to any element you wish to animate into view, e.g.</p>
 
@@ -111,6 +113,6 @@
 
 </main>
 
-<script src="js/revealer.min.js"></script>
+<script src="src/js/revealer.js"></script>
 </body>
 </html>

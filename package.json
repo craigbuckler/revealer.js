@@ -1,0 +1,35 @@
+{
+  "name": "revealer.js",
+  "version": "1.0.0",
+  "description": "reveals an element with a CSS animation when it is scrolled into view",
+  "main": "dist/revealer.js",
+  "files": [
+    "dist/revealer.css"
+  ],
+  "scripts": {
+    "build": "npm i && gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Craig Buckler",
+  "homepage": "https://github.com/craigbuckler/revealer.js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigbuckler/revealer.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/craigbuckler/revealer.js/issues"
+  },
+  "keywords": [
+    "JavaScript",
+    "reveal",
+    "effect"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-terser": "^1.2.0"
+  }
+}

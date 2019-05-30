@@ -1,5 +1,5 @@
 /*
-	Revealer.js v1.0
+	Revealer.js
 */
 if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded', function() {
 
