@@ -1,34 +1,35 @@
 /* revealer initial state */
 .revealer {
-  opacity: 0;
+	opacity: 0;
+	animation: 0.6s ease forwards;
 }
 
 /* revealer animations when in view */
-.revealer.up { animation: revealup 0.6s ease forwards; }
+.revealer.up { animation-name: revealup; }
 @keyframes revealup {
 	0% { opacity: 0.2; transform: translateY(100px); }
 	100% { opacity: 1; transform: translateY(0); }
 }
 
-.revealer.down { animation: revealdown 0.6s ease forwards; }
+.revealer.down { animation-name: revealdown; }
 @keyframes revealdown {
 	0% { opacity: 0.2; transform: translateY(-100px); }
 	100% { opacity: 1; transform: translateY(0); }
 }
 
-.revealer.left { animation: revealleft 0.6s ease forwards; }
+.revealer.left { animation-name: revealleft; }
 @keyframes revealleft {
 	0% { opacity: 0.2; transform: translateX(-100px); }
 	100% { opacity: 1; transform: translateX(0); }
 }
 
-.revealer.right { animation: revealright 0.6s ease forwards; }
+.revealer.right { animation-name: revealright; }
 @keyframes revealright {
 	0% { opacity: 0.2; transform: translateX(100px); }
 	100% { opacity: 1; transform: translateX(0); }
 }
 
-.revealer.zoomup { animation: revealzoomup 0.6s ease forwards; }
+.revealer.zoomup { animation-name: revealzoomup; }
 @keyframes revealzoomup {
 	0% { opacity: 0.2; transform: scale(0.7) translateY(100px); }
 	100% { opacity: 1; transform: scale(1) translateY(0); }

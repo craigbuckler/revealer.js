@@ -27,7 +27,7 @@
       <li data-revealer="left">shows attention-grabbing animations</li>
       <li data-revealer="right">fast loading, high performance, uses Intersection Observers</li>
       <li data-revealer="left">fully customisable - any CSS reveal effect can be applied</li>
-      <li data-revealer="right">small: 825 bytes of JavaScript, 171 bytes of CSS (minimum)</li>
+      <li data-revealer="right">small: 665 bytes of JavaScript, 185 bytes of CSS (minimum)</li>
       <li data-revealer="left">works in all modern browsers (not IE)</li>
       <li data-revealer="right">safe progressive enhancement - will not break older browsers</li>
       <li data-revealer="left">easy to use</li>
@@ -96,12 +96,16 @@
     <ul>
       <li><code>cfg.name</code> - attribute data name (default <code>revealer</code>)</li>
       <li><code>cfg.delay</code> - attribute data delay (default <code>delay</code>)</li>
-      <li><code>cfg.root</code> - root element (default <code>null</code> for viewport)</li>
-      <li><code>cfg.margin</code> - margin around root element (default <code>0px</code>)</li>
       <li><code>cfg.threshold</code> - proportion of element visible before triggering animation (default <code>0.6</code> - element must be at least 60% in viewport)</li>
       <li><code>cfg.minDelay</code> - minimum delay between each animation unless set with data-delay (default <code>300</code> milliseconds)</li>
     </ul>
 
+    <p>The Intersection observer options can also be changed if necessary:</p>
+
+    <ul>
+      <li><code>root</code> - root element (default <code>null</code> for viewport)</li>
+      <li><code>margin</code> - margin around root element (default <code>0px</code>)</li>
+    </ul>
 
     <h2 data-revealer="right">Further considerations</h2>
 
