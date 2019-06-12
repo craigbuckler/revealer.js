@@ -20,8 +20,8 @@ Please use the code as you wish. [Tweet me @craigbuckler](https://twitter.com/cr
 Include the minified CSS and JavaScript anywhere in your page. Typically, the CSS is loaded in the HTML `<head>` and the JS is loaded just before the closing `</body>` tag:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/revealer.js@1.0.0/dist/revealer.css">
-<script src="https://cdn.jsdelivr.net/npm/revealer.js@1.0.0/dist/revealer.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/revealer.js/dist/revealer.css">
+<script src="https://cdn.jsdelivr.net/npm/revealer.js/dist/revealer.js"></script>
 ```
 
 CDN URLs are shown above but you can also `npm i revealer.js` to install via npm and use a bundler.
