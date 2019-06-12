@@ -7,12 +7,10 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
 
   var
     cfg = {
-      name: 'revealer',     // revealer data name, e.g. data-revealer="animationClass"
-      delay: 'delay',       // revealer delay data name, e.g. data-delay="100"
-      root: null,           // root element (null for viewport)
-      rootMargin: '0px',    // margin around root element
-      threshold: 0.6,       // proportion of element visible before triggering animation
-      minDelay: 300         // minimum delay between each animation unless set with data-delay
+      name: 'revealer',       // revealer data name, e.g. data-revealer="animationClass"
+      delay: 'delay',         // revealer delay data name, e.g. data-delay="100"
+      threshold: 0.6,         // proportion of element visible before triggering animation
+      minDelay: 300           // minimum delay between each animation unless set with data-delay
     },
 
     rNode = document.querySelectorAll('[data-' + cfg.name + ']');
@@ -24,11 +22,7 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
   for (var i = 0; i < rN; i++) rNode[i].classList.add(cfg.name);
 
   // observe all components
-  console.log(document.readyState);
-  if (document.readyState === 'complete') observe();
-  else window.addEventListener('load', observe, false);
-
-  function observe() {
+  window.addEventListener('load', function() {
 
     var
       nextTime = 0,
@@ -52,7 +46,7 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
             // reveal after delay
             setTimeout(function() {
               requestAnimationFrame(function() {
-                t.className += ' ' + rCls;
+                t.classList.add(rCls);
               });
             }, d !== undefined ? d : nextTime - now);
 
@@ -62,14 +56,14 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
 
         },
         {
-          root: cfg.root,
-          rootMargin: cfg.rootMargin,
+          root: null,         // root element (null for viewport)
+          rootMargin: '0px',  // margin around root element
           threshold: cfg.threshold
         }
       );
 
     for (var i = 0; i < rN; i++) observer.observe(rNode[i]);
 
-  }
+  }, false);
 
 }, false);

@@ -9,7 +9,7 @@ Please use the code as you wish. [Tweet me @craigbuckler](https://twitter.com/cr
 * shows attention-grabbing animations
 * fast loading, high performance, uses Intersection Observers
 * fully customisable - any CSS reveal effect can be applied
-* small: 825 bytes of JavaScript, 171 bytes of CSS (minimum)
+* small: 665 bytes of JavaScript, 185 bytes of CSS (minimum)
 * works in all modern browsers (not IE)
 * safe progressive enhancement - will not break older browsers
 * easy to use
@@ -70,10 +70,13 @@ revealer.js defines the following configuration variables in a cfg object which 
 
 * `cfg.name` - attribute data name (default `revealer`)
 * `cfg.delay` - attribute data delay (default `delay`)
-* `cfg.root` - root element (default `null` for viewport)
-* `cfg.margin` - margin around root element (default `0px`)
 * `cfg.threshold` - proportion of element visible before triggering animation (default `0.6` - element must be at least 60% in viewport)
 * `cfg.minDelay` - minimum delay between each animation unless set with data-delay (default `300` milliseconds)
+
+The Intersection observer options can also be changed if necessary:
+
+* `root` - root element (default `null` for viewport)
+* `margin` - margin around root element (default `0px`)
 
 
 ## Further considerations
@@ -84,6 +87,11 @@ Avoid using on very large elements where it may become impossible to show 60% of
 
 
 ## Version history
+
+### v1.0.1, 12 June 2019
+
+* size and performance optimisation
+* build update
 
 ### v1.0.0, 30 May 2019
 
