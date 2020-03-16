@@ -4,6 +4,13 @@
 	animation: 0.6s ease forwards;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .revealer {
+		opacity: 1;
+		animation: none !important;
+  }
+}
+
 /* revealer animations when in view */
 .revealer.up { animation-name: revealup; }
 @keyframes revealup {

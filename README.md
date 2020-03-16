@@ -12,6 +12,7 @@ Please use the code as you wish. [Tweet me @craigbuckler](https://twitter.com/cr
 * small: 665 bytes of JavaScript, 185 bytes of CSS (minimum)
 * works in all modern browsers (not IE)
 * safe progressive enhancement - will not break older browsers
+* animation can be disabled by user
 * easy to use
 
 
@@ -33,6 +34,8 @@ Then add a `data-revealer="class"` attribute to any element you wish to animate 
 ```
 
 Five class animations are provided: `up`, `down`, `left`, `right`, and `zoomup`, but more can be added.
+
+A CSS [`prefers-reduced-motion` media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) disables animations according to user preference.
 
 
 ## Custom delays
@@ -81,12 +84,14 @@ The Intersection observer options can also be changed if necessary:
 
 ## Further considerations
 
-Consider using the [`prefers-reduced-motion` media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) to disable animations according to user preference.
-
-Avoid using on very large elements where it may become impossible to show 60% of it on-screen so the revealing animation is never triggered.
+Avoid using revealer.js on large elements where it is not possible to show 60% of the item on-screen so the revealing animation is never triggered.
 
 
 ## Version history
+
+### v1.1.0, 16 March 2020
+
+* `prefers-reduced-motion` media query
 
 ### v1.0.1, 12 June 2019
 
