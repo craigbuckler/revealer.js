@@ -7,10 +7,10 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
 
   var
     cfg = {
-      name: 'revealer',       // revealer data name, e.g. data-revealer="animationClass"
-      delay: 'delay',         // revealer delay data name, e.g. data-delay="100"
-      threshold: 0.6,         // proportion of element visible before triggering animation
-      minDelay: 300           // minimum delay between each animation unless set with data-delay
+      name      : 'revealer',  // revealer data name, e.g. data-revealer="animationClass"
+      delay     : 'delay',     // revealer delay data name, e.g. data-delay="100"
+      threshold : 0.6,         // proportion of element visible before triggering animation
+      minDelay  : 300          // minimum delay between each animation unless set with data-delay
     },
 
     rNode = document.querySelectorAll('[data-' + cfg.name + ']');
@@ -18,10 +18,10 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
   var rN = rNode.length;
   if (!rN) return;
 
-  // hide components
+  // hide elements
   for (var i = 0; i < rN; i++) rNode[i].classList.add(cfg.name);
 
-  // observe all components
+  // observe all elements
   window.addEventListener('load', function() {
 
     var
@@ -40,9 +40,6 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
             var d = t.dataset[cfg.delay], now = +new Date();
             if (nextTime < now) nextTime = now;
 
-            // unobserve
-            observer.unobserve(t);
-
             // reveal after delay
             setTimeout(function() {
               requestAnimationFrame(function() {
@@ -51,6 +48,9 @@ if ('IntersectionObserver' in window) window.addEventListener('DOMContentLoaded'
             }, d !== undefined ? d : nextTime - now);
 
             nextTime += cfg.minDelay;
+
+            // unobserve
+            observer.unobserve(t);
 
           });
 
